@@ -12,6 +12,6 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity
         public string Descrizione { get; set; }
 
         //relazione
-        public List<Verbale> Verbali { get; set; }
+        public List<Verbale>? Verbali { get; set; }
     }
 }

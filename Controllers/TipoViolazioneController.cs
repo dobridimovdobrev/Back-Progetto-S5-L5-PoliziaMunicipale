@@ -52,6 +52,12 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Controllers
                 return View(violazione);
             }
 
+            var nuovaViolazione = new TipoViolazione
+            {
+                Id = Guid.NewGuid(),
+                Descrizione = violazione.Descrizione
+            };
+
             bool created = await _tipoViolazioneService.CreateTipoViolazioneAsync(violazione);
 
             return RedirectToAction(nameof(Index));

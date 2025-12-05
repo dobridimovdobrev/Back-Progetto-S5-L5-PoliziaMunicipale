@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale>
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Verbali";
@@ -29,10 +30,10 @@
                     <td>@item.DataViolazione.ToString("dd/MM/yyyy HH:mm")</td>
                     <td>@(item.Anagrafica != null ? item.Anagrafica.Cognome + " " + item.Anagrafica.Nome : "")</td>
                     <td>@item.TipoViolazione?.Descrizione</td>
-                    <td>@item.Importo.ToString("C")</td>
+                    <td>@item.Importo.ToString("C", CultureInfo.GetCultureInfo("it-IT"))</td>
                     <td>@item.DecurtamentoPunti</td>
                     <td>@item.NominativoAgente</td>
-                    <td class="table-actions">
+                    <td class="table-actions py-3">
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary btn-sm btn-rounded">Dettagli</a>
                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm btn-rounded">Modifica</a>
                         <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-rounded">Elimina</a>

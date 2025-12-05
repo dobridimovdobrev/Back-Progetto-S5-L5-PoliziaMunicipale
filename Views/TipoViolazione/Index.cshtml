@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.TipoViolazione>
+
+@{
+    ViewData["Title"] = "Tipi Violazione";
+}
+
+<div class="d-flex justify-content-between align-items-center my-3">
+    <h1 class="fs-2">Tipi di Violazione</h1>
+    <a asp-action="Create" class="btn btn-primary btn-rounded btn-sm">Nuova Violazione</a>
+</div>
+
+<div class="card-panel">
+    <table class="table table-sm align-middle">
+        <thead>
+            <tr>
+                <th>Descrizione</th>
+                <th style="width: 200px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in Model)
+            {
+                <tr>
+                    <td class="my-3">@v.Descrizione</td>
+                    <td class="table-actions py-3">
+                        <a asp-action="Details" asp-route-id="@v.Id" class="btn btn-secondary btn-sm">Dettagli</a>
+                        <a asp-action="Edit" asp-route-id="@v.Id" class="btn btn-primary btn-sm">Modifica</a>
+                        <a asp-action="Delete" asp-route-id="@v.Id" class="btn btn-danger btn-sm">Elimina</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

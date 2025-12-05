@@ -1,0 +1,27 @@
+﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.TipoViolazione
+
+@{
+    ViewData["Title"] = "Modifica Violazione";
+}
+
+<h4>Modifica Tipo Violazione</h4>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Descrizione" class="form-label"></label>
+        <textarea asp-for="Descrizione" class="form-control"></textarea>
+        <span asp-validation-for="Descrizione" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-rounded">Aggiorna</button>
+    <a asp-action="Index" class="btn btn-secondary btn-rounded">Annulla</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

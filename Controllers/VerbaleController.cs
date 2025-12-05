@@ -64,7 +64,7 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Controllers
 
             bool created = await _verbaleService.CreateVerbaleAsync(verbale);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Verbale");
         }
 
         // metodo get per edit verbale
@@ -108,7 +108,7 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Controllers
                 return View(verbale);
             }
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Verbale");
         }
 
         // conferma eliminazione verbale
@@ -133,7 +133,7 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             await _verbaleService.DeleteVerbaleAsync(id);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Verbale");
         }
 
         // metodo privato per caricare le select

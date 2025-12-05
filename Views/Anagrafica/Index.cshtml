@@ -3,63 +3,63 @@
 @{
     ViewData["Title"] = "Index";
 }
+<div class="d-flex justify-content-between align-items-center my-3">
+    <h1>Lista Anagrafiche</h1>
+    <a class="btn btn-primary btn-rounded btn-sm" asp-action="Create">Crea Nuova</a>
+</div>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cognome)
+                Cognome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Indirizzo)
+                Indirizzo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Citta)
+                Citta
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cap)
+                Cap
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CodiceFiscale)
+                CodiceFiscale
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cognome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Indirizzo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Citta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodiceFiscale)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Cognome
+                </td>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @item.Indirizzo
+                </td>
+                <td>
+                    @item.Citta
+                </td>
+                <td>
+                    @item.Cap
+                </td>
+                <td>
+                    @item.CodiceFiscale
+                </td>
+                <td class="py-3">
+                    <a class="text-decoration-none text-white bg-secondary rounded-3 px-2 py-1" asp-action="Details" asp-route-id="@item.Id">Dettagli</a>
+                    <a class="text-decoration-none text-white bg-primary rounded-3 px-2 py-1 mx-3" asp-action="Edit" asp-route-id="@item.Id">Modifica</a>
+                    <a class="text-decoration-none text-white bg-danger rounded-3 px-2 py-1" asp-action="Delete" asp-route-id="@item.Id">Elimina</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -39,9 +39,9 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity
         //relazioni uno a molti, foreign key collegamento tabelle anagrafica e tipo violazioni
 
         [ForeignKey(nameof(IdAnagrafica))]
-        public Anagrafica Anagrafica { get; set; }
+        public Anagrafica? Anagrafica { get; set; }
 
         [ForeignKey(nameof(IdTipoViolazione))]
-        public TipoViolazione TipoViolazione { get; set; }
+        public TipoViolazione? TipoViolazione { get; set; }
     }
 }

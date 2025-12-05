@@ -1,0 +1,15 @@
+﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.TipoViolazione
+
+@{
+    ViewData["Title"] = "Dettagli Violazione";
+}
+
+<h4>Dettagli Tipo Violazione</h4>
+<hr />
+
+<div class="card-panel">
+    <p><strong>Descrizione:</strong> @Model.Descrizione</p>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Modifica</a>
+<a asp-action="Index" class="btn btn-secondary btn-sm">Indietro</a>

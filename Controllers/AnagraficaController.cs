@@ -51,9 +51,11 @@ namespace Back_Progetto_S5_L5_PoliziaMunicipale.Controllers
                 return View(anagrafica);
             }
 
+
+
             bool created = await _anagraficaService.CreateAnagraficaAsync(anagrafica);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Anagrafica");
         }
 
         // metodo get per edit anagrafica

@@ -1,0 +1,19 @@
+﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.TipoViolazione
+
+@{
+    ViewData["Title"] = "Elimina Violazione";
+}
+
+<h4>Sei sicuro di voler eliminare questa violazione?</h4>
+<hr />
+
+<div class="card-panel">
+    <p><strong>Descrizione:</strong> @Model.Descrizione</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger btn-rounded">Elimina</button>
+    <a asp-action="Index" class="btn btn-secondary btn-rounded">Annulla</a>
+</form>

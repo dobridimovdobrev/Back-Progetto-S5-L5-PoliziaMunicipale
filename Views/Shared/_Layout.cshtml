@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,34 +26,34 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4 fw-bold">
                         @{
                             var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
                         }
 
                         <li class="nav-item">
-                            <a class="nav-link @(currentController == "Home" ? "active" : "")"
+                            <a class="nav-link @(currentController == "Home" ? "active" : "") fs-6"
                                asp-controller="Home" asp-action="Index">
                                 Home
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link @(currentController == "Anagrafica" ? "active" : "")"
+                            <a class="nav-link @(currentController == "Anagrafica" ? "active" : "") fs-6"
                                asp-controller="Anagrafica" asp-action="Index">
                                 Anagrafiche
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link @(currentController == "TipoViolazione" ? "active" : "")"
+                            <a class="nav-link @(currentController == "TipoViolazione" ? "active" : "") fs-6"
                                asp-controller="TipoViolazione" asp-action="Index">
                                 Tipi violazione
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link @(currentController == "Verbale" ? "active" : "")"
+                            <a class="nav-link @(currentController == "Verbale" ? "active" : "") fs-6"
                                asp-controller="Verbale" asp-action="Index">
                                 Verbali
                             </a>
@@ -61,7 +61,7 @@
 
                         <!-- Report -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle @(currentController == "Report" ? "active" : "")"
+                            <a class="nav-link dropdown-toggle @(currentController == "Report" ? "active" : "") fs-6"
                                href="#" id="reportDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Report

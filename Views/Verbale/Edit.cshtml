@@ -1,13 +1,13 @@
 ﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale
 
 @{
-    ViewData["Title"] = "Nuovo verbale";
+    ViewData["Title"] = "Modifica verbale";
 }
 
-<h4 class="mb-3">Nuovo verbale</h4>
+<h4 class="mb-3">Modifica verbale</h4>
 
 <div class="card-panel">
-    <form asp-action="Create" method="post">
+    <form asp-action="Edit" asp-controller="Verbale" method="post">
         <div class="row">
             <div class="col-md-6">
 

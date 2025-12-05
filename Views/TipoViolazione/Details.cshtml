@@ -10,6 +10,7 @@
 <div class="card-panel">
     <p><strong>Descrizione:</strong> @Model.Descrizione</p>
 </div>
-
-<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Modifica</a>
-<a asp-action="Index" class="btn btn-secondary btn-sm">Indietro</a>
+<div class="mt-3 d-flex gap-2">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">Salva</a>
+    <a asp-action="Index" class="btn btn-secondary btn-sm">Annulla</a>
+</div>

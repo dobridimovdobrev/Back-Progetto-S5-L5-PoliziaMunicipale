@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.ViewModels.GetPuntiTrasgressoreReport>
+
+@{
+    ViewData["Title"] = "Totale punti per trasgressore";
+}
+
+<h4 class="mb-3">Totale punti decurtati per trasgressore</h4>
+
+<div class="card-panel">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th class="text-end">Punti totali</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Cognome</td>
+                    <td>@item.Nome</td>
+                    <td class="text-end">@item.TotalePunti</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

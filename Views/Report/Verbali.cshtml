@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.ViewModels.GetVerbaliTrasgressoreReport>
+
+@{
+    ViewData["Title"] = "Tutti verbali";
+}
+
+<h4 class="mb-3">Totale verbali per trasgressore</h4>
+
+<div class="card-panel">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th class="text-end">Totale verbali</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Cognome</td>
+                    <td>@item.Nome</td>
+                    <td class="text-end">@item.TotaleVerbali</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

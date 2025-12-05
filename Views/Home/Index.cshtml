@@ -1,8 +1,52 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card-panel mb-3">
+    <h4 class="mb-1">Gestione Verbali - Polizia Municipale</h4>
+    <p class="text-muted mb-0">
+        Applicazione interna per la gestione di anagrafiche, tipi di violazione, verbali e report statistici.
+    </p>
+</div>
+
+<div class="home-grid">
+    <div class="home-card">
+        <div class="home-card-title">Anagrafiche</div>
+        <div class="home-card-text">
+            Gestisci i dati anagrafici dei trasgressori: nome, cognome, indirizzo, città, CAP, codice fiscale.
+        </div>
+        <a asp-controller="Anagrafica" asp-action="Index" class="btn btn-primary btn-sm btn-rounded">
+            Vai alle anagrafiche
+        </a>
+    </div>
+
+    <div class="home-card">
+        <div class="home-card-title">Tipi di violazione</div>
+        <div class="home-card-text">
+            Elenco delle violazioni contestabili, con descrizione dettagliata.
+        </div>
+        <a asp-controller="TipoViolazione" asp-action="Index" class="btn btn-primary btn-sm btn-rounded">
+            Vai ai tipi violazione
+        </a>
+    </div>
+
+    <div class="home-card">
+        <div class="home-card-title">Verbali</div>
+        <div class="home-card-text">
+            Inserisci e visualizza i verbali con dati su importi, punti, agente e violazione.
+        </div>
+        <a asp-controller="Verbale" asp-action="Index" class="btn btn-primary btn-sm btn-rounded">
+            Vai ai verbali
+        </a>
+    </div>
+
+    <div class="home-card">
+        <div class="home-card-title">Report e statistiche</div>
+        <div class="home-card-text">
+            Consulta report per trasgressore, punti decurtati e violazioni più gravi.
+        </div>
+        <a asp-controller="Report" asp-action="AllVerbali" class="btn btn-secondary btn-sm btn-rounded">
+            Apri i report
+        </a>
+    </div>
 </div>

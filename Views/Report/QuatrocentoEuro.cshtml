@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.ViewModels.ViolazioniQuattrocentoEuroReport>
+
+@{
+    ViewData["Title"] = "Violazioni oltre 400 €";
+}
+
+<h4 class="mb-3">Violazioni con importo superiore a 400 €</h4>
+
+<div class="card-panel">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th>Data violazione</th>
+                <th class="text-end">Importo</th>
+                <th class="text-end">Punti</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Cognome</td>
+                    <td>@item.Nome</td>
+                    <td>@item.DataViolazione.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td class="text-end">@item.Importo.ToString("C")</td>
+                    <td class="text-end">@item.DecurtamentoPunti</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

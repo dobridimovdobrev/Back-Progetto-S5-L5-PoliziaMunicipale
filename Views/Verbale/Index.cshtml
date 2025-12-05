@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale>
+
+@{
+    ViewData["Title"] = "Verbali";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Elenco verbali</h4>
+    <a asp-action="Create" class="btn btn-primary btn-sm btn-rounded">Nuovo verbale</a>
+</div>
+
+<div class="card-panel">
+    <table class="table table-sm align-middle">
+        <thead>
+            <tr>
+                <th>Data violazione</th>
+                <th>Trasgressore</th>
+                <th>Tipo violazione</th>
+                <th>Importo</th>
+                <th>Punti</th>
+                <th>Agente</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DataViolazione.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@(item.Anagrafica != null ? item.Anagrafica.Cognome + " " + item.Anagrafica.Nome : "")</td>
+                    <td>@item.TipoViolazione?.Descrizione</td>
+                    <td>@item.Importo.ToString("C")</td>
+                    <td>@item.DecurtamentoPunti</td>
+                    <td>@item.NominativoAgente</td>
+                    <td class="table-actions">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary btn-sm btn-rounded">Dettagli</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm btn-rounded">Modifica</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-rounded">Elimina</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

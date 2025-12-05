@@ -1,0 +1,36 @@
+﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale
+
+@{
+    ViewData["Title"] = "Elimina verbale";
+}
+
+<h4 class="mb-3 text-danger">Conferma eliminazione verbale</h4>
+
+<div class="card-panel">
+    <p class="mb-3">
+        Sei sicuro di voler eliminare questo verbale?
+    </p>
+
+    <dl class="row">
+        <dt class="col-sm-3">Trasgressore</dt>
+        <dd class="col-sm-9">@Model.Anagrafica?.Cognome @Model.Anagrafica?.Nome</dd>
+
+        <dt class="col-sm-3">Tipo violazione</dt>
+        <dd class="col-sm-9">@Model.TipoViolazione?.Descrizione</dd>
+
+        <dt class="col-sm-3">Data violazione</dt>
+        <dd class="col-sm-9">@Model.DataViolazione.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Importo</dt>
+        <dd class="col-sm-9">@Model.Importo.ToString("C")</dd>
+
+        <dt class="col-sm-3">Punti decurtati</dt>
+        <dd class="col-sm-9">@Model.DecurtamentoPunti</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post" class="mt-3 d-flex gap-2">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger btn-rounded">Elimina</button>
+        <a asp-action="Index" class="btn btn-secondary btn-rounded">Annulla</a>
+    </form>
+</div>

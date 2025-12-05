@@ -1,22 +1,114 @@
-html {
-  font-size: 14px;
+
+.app-body {
+    background-color: #f3f4f6;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.custom-navbar {
+    background: linear-gradient(90deg, #1d4ed8, #1e40af);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.brand-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 0.06em;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.brand-subtitle {
+    font-size: 0.7rem;
+    opacity: 0.85;
 }
 
-body {
-  margin-bottom: 60px;
+
+.navbar .nav-link {
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+    .navbar .nav-link.active {
+        background-color: #fbbf24;
+        color: #111827 !important;
+    }
+
+.custom-footer {
+    background-color: #111827;
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.card-panel {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.08);
+    margin-bottom: 1rem;
+}
+
+.table thead {
+    background-color: #e5e7eb;
+}
+
+    .table thead th {
+        border-bottom-width: 1px;
+    }
+
+.table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.btn-rounded {
+    border-radius: 999px;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-control,
+.form-select {
+    font-size: 0.9rem;
+}
+
+.text-danger {
+    font-size: 0.8rem;
+}
+
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+}
+
+.home-card {
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12), 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.home-card-title {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.home-card-text {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
 }

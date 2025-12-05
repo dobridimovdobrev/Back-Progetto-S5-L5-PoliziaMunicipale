@@ -1,0 +1,40 @@
+﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale
+
+@{
+    ViewData["Title"] = "Dettagli verbale";
+}
+
+<h4 class="mb-3">Dettagli verbale</h4>
+
+<div class="card-panel">
+    <dl class="row">
+        <dt class="col-sm-3">Trasgressore</dt>
+        <dd class="col-sm-9">@Model.Anagrafica?.Cognome @Model.Anagrafica?.Nome</dd>
+
+        <dt class="col-sm-3">Tipo violazione</dt>
+        <dd class="col-sm-9">@Model.TipoViolazione?.Descrizione</dd>
+
+        <dt class="col-sm-3">Data violazione</dt>
+        <dd class="col-sm-9">@Model.DataViolazione.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Indirizzo</dt>
+        <dd class="col-sm-9">@Model.IndirizzoViolazione</dd>
+
+        <dt class="col-sm-3">Agente</dt>
+        <dd class="col-sm-9">@Model.NominativoAgente</dd>
+
+        <dt class="col-sm-3">Data trascrizione</dt>
+        <dd class="col-sm-9">@Model.DataTrascizioneVerbale.ToString("dd/MM/yyyy HH:mm")</dd>
+
+        <dt class="col-sm-3">Importo</dt>
+        <dd class="col-sm-9">@Model.Importo.ToString("C")</dd>
+
+        <dt class="col-sm-3">Punti decurtati</dt>
+        <dd class="col-sm-9">@Model.DecurtamentoPunti</dd>
+    </dl>
+
+    <div class="mt-3 d-flex gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-sm btn-rounded">Modifica</a>
+        <a asp-action="Index" class="btn btn-secondary btn-sm btn-rounded">Torna alla lista</a>
+    </div>
+</div>

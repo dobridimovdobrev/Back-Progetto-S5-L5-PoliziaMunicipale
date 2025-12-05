@@ -10,35 +10,109 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Back_Progetto_S5_L5_PoliziaMunicipale</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm custom-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <span class="brand-badge me-2">PM</span>
+                    <span class="fw-semibold">
+                        Polizia Municipale
+                        <small class="d-block fw-normal brand-subtitle">Gestione verbali</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        @{
+                            var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                        }
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link @(currentController == "Home" ? "active" : "")"
+                               asp-controller="Home" asp-action="Index">
+                                Home
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link @(currentController == "Anagrafica" ? "active" : "")"
+                               asp-controller="Anagrafica" asp-action="Index">
+                                Anagrafiche
+                            </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @(currentController == "TipoViolazione" ? "active" : "")"
+                               asp-controller="TipoViolazione" asp-action="Index">
+                                Tipi violazione
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link @(currentController == "Verbale" ? "active" : "")"
+                               asp-controller="Verbale" asp-action="Index">
+                                Verbali
+                            </a>
+                        </li>
+
+                        <!-- Report -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle @(currentController == "Report" ? "active" : "")"
+                               href="#" id="reportDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Report
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="reportDropdown">
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="Report" asp-action="AllVerbali">
+                                        Verbali per trasgressore
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="Report" asp-action="AllPunti">
+                                        Punti per trasgressore
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="Report" asp-action="DieciPunti">
+                                        Violazioni &gt; 10 punti
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       asp-controller="Report" asp-action="QuattrocentoEuro">
+                                        Violazioni &gt; 400 €
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="py-4 min-vh-100">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Back_Progetto_S5_L5_PoliziaMunicipale - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="mt-auto custom-footer">
+        <div class="container py-3 d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="small text-muted">
+                &copy; 2025 · Polizia Municipale
+            </div>
+            <div class="small text-muted">
+                Created by Lo Zio
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

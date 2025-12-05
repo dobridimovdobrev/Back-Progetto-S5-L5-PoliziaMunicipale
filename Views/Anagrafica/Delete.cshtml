@@ -1,14 +1,11 @@
 ﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Anagrafica
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Elimina anagrafica";
 }
 
-<h1>Elimina</h1>
-
-<h3>Sicuro di voler eliminare?</h3>
+<h4>Sicuro di voler eliminare la anagrafica?</h4>
 <div>
-    <h4>Anagrafica</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -51,7 +48,7 @@
 
     <form asp-action="DeleteConfirmed" asp-controller="Anagrafica" method="post">
         <input type="hidden" asp-for="Id" />
-        <button type="submit" value="Elimina" class="btn btn-danger"> Elimina </button>
-        <a asp-action="Index">Torna Indietro</a>
+        <button type="submit" value="Elimina" class="btn btn-rounded btn-danger"> Elimina </button>
+        <a class="btn btn-secondary btn-rounded mx-2" asp-action="Index">Annulla</a>
     </form>
 </div>

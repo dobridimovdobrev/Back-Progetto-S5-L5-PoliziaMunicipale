@@ -1,4 +1,5 @@
 ﻿@model Back_Progetto_S5_L5_PoliziaMunicipale.Models.Entity.Verbale
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Elimina verbale";
@@ -22,7 +23,7 @@
         <dd class="col-sm-9">@Model.DataViolazione.ToString("dd/MM/yyyy HH:mm")</dd>
 
         <dt class="col-sm-3">Importo</dt>
-        <dd class="col-sm-9">@Model.Importo.ToString("C")</dd>
+        <dd class="col-sm-9">@Model.Importo.ToString("C", CultureInfo.GetCultureInfo("it-IT"))</dd>
 
         <dt class="col-sm-3">Punti decurtati</dt>
         <dd class="col-sm-9">@Model.DecurtamentoPunti</dd>
